@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Bash instructions to run Kojo.
+
+cd "$(dirname "$0")" || exit
+cd ..
+php vendor/bin/kojo process:pool:server:start $PWD/kojo-environment/
