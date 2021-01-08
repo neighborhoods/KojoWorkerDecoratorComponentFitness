@@ -1,0 +1,85 @@
+version: '3.7'
+
+services:
+  app:
+    build: docker/app
+    environment:
+      DATABASE_USERNAME: "user"
+      DATABASE_PASSWORD: "password"
+      DATABASE_ADAPTER: "pgsql"
+      DATABASE_HOST: "postgres"
+      DATABASE_NAME: "kojo_worker_decorator_component_fitness"
+      DATABASE_PORT: "5432"
+      KOJO_REDIS_HOST: "redis"
+      KOJO_REDIS_PORT: "6379"
+      SITE_ENVIRONMENT: "Local"
+
+      DD_TRACE_ENABLED: "true"
+      DD_AGENT_HOST: datadog-agent
+      DD_TRACE_AGENT_PORT: 8126
+      DD_TRACE_DEBUG: "true"
+      DD_SERVICE: "kojo_worker_decorator_component_fitness"
+      DD_ENV: "local" #local, dev, or prod
+
+
+#      These are for CLI environments only
+#      DD_TRACE_CLI_ENABLED: "true"
+#      DD_TRACE_BETA_SEND_TRACES_VIA_THREAD: "false"
+#      DD_TRACE_GENERATE_ROOT_SPAN: "false"
+#      DD_TRACE_AUTO_FLUSH_ENABLED: "true"
+#      DD_AUTOFINISH_SPANS: "true"
+#      DD_TRACE_DEBUG_CURL_OUTPUT: "true"
+
+    restart: always
+    depends_on:
+      - postgres
+    ports:
+      - 9041
+      - 9000
+    volumes:
+      - ../KojoWorkerDecoratorComponentFitness:/var/www/html/kojo_worker_decorator_component_fitness
+      - ../KojoWorkerDecoratorComponent:/var/www/html/kojo_worker_decorator_component
+
+  nginx:
+    build:
+      context: docker/nginx
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ../KojoWorkerDecoratorComponentFitness:/var/www/html/kojo_worker_decorator_component_fitness
+      - ./Logs/nginx/:/var/log/nginx
+      - ./docker/nginx/sites/:/etc/nginx/sites-available
+      - ./docker/nginx/conf.d/:/etc/nginx/conf.d
+      - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - app
+
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: "kojo_worker_decorator_component_fitness"
+      POSTGRES_USER: "user"
+      POSTGRES_PASSWORD: "password"
+      POSTGRES_PORT: 5432
+    restart: always
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres:/var/lib/postgresql/data
+      - ./postgres/init:/docker-entrypoint-initdb.d
+  redis:
+    image: redis:latest
+    ports:
+      - 6379
+#  datadog-agent:
+#    image: datadog/agent:7
+#    volumes:
+#      - /var/run/docker.sock:/var/run/docker.sock:ro
+#      - /proc/:/host/proc/:ro
+#      - /sys/fs/cgroup/:/host/sys/fs/cgroup:ro
+#    environment:
+#      DD_API_KEY: ""
+#      DD_SITE: "datadoghq.com"
+volumes:
+  postgres:
