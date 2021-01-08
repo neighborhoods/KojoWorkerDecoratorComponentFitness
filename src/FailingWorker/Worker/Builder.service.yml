@@ -1,0 +1,16 @@
+parameters:
+  Neighborhoods\KojoWorkerDecoratorComponent\Worker\CrashedThresholdDecoratorInterface.threshold: 5
+  Neighborhoods\KojoWorkerDecoratorComponent\Worker\ExceptionHandlingDecoratorInterface.retryIntervalDefinition: 'PT5M'
+services:
+  Neighborhoods\KojoWorkerDecoratorComponent\Worker\UserlandPdoDecorator\BuilderInterface.prefabDoctrineDbalConnectionDecoratorRepository:
+    alias: Neighborhoods\KojoWorkerDecoratorComponentFitness\Prefab5\Doctrine\DBAL\Connection\Decorator\RepositoryInterface
+  Neighborhoods\KojoWorkerDecoratorComponentFitness\FailingWorker\Worker\BuilderInterface:
+    class: Neighborhoods\KojoWorkerDecoratorComponentFitness\FailingWorker\Worker\Builder
+    public: false
+    shared: false
+    calls:
+      - [setWorkerFactory, ['@Neighborhoods\KojoWorkerDecoratorComponentFitness\FailingWorker\Worker\FactoryInterface']]
+      # Add predefined decorator(s) as shown below
+      - [ addDecoratorBuilderFactory, [ '@Neighborhoods\KojoWorkerDecoratorComponent\Worker\CrashedThresholdDecorator\Builder\FactoryInterface' ] ]
+      - [ addDecoratorBuilderFactory, [ '@Neighborhoods\KojoWorkerDecoratorComponent\Worker\UserlandPdoDecorator\Builder\FactoryInterface' ] ]
+      - [ addDecoratorBuilderFactory, [ '@Neighborhoods\KojoWorkerDecoratorComponent\Worker\ExceptionHandlingDecorator\Builder\FactoryInterface' ] ]
