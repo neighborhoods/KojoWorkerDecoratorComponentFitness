@@ -4,12 +4,14 @@ declare(strict_types=1);
 
 namespace Neighborhoods\KojoWorkerDecoratorComponentFitness\SuccessWorker\Worker;
 
+use Neighborhoods\DependencyInjectionContainerBuilderComponent\SymfonyConfigCacheHandler;
+use Neighborhoods\DependencyInjectionContainerBuilderComponent\TinyContainerBuilder;
 use Neighborhoods\KojoWorkerDecoratorComponentFitness\SuccessWorker\Worker as Worker;
-use Neighborhoods\ContainerBuilder\Builder;
 use Neighborhoods\Kojo\Api;
 use Neighborhoods\KojoWorkerDecoratorComponent\WorkerInterface;
 use Psr\Container\ContainerInterface;
 use RuntimeException;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 class Proxy implements ProxyInterface
 {
@@ -31,35 +33,32 @@ class Proxy implements ProxyInterface
 
     protected function getContainer(): ContainerInterface
     {
-        $proteanContainerBuilder = new Builder();
-        $proteanContainerBuilder->setCanBuildZendExpressive(false);
-        $proteanContainerBuilder->setContainerName(str_replace('\\', '', Worker::class));
-
-        $proteanContainerBuilder->getDiscoverableDirectories()->addDirectoryPathFilter(
-            '../vendor/neighborhoods/throwable-diagnostic-component/src'
-        );
-        $proteanContainerBuilder->getDiscoverableDirectories()->addDirectoryPathFilter(
-            '../vendor/neighborhoods/kojo-worker-decorator-component/fab'
-        );
-        $proteanContainerBuilder->getDiscoverableDirectories()->addDirectoryPathFilter(
-            '../vendor/neighborhoods/kojo-worker-decorator-component/src'
-        );
-        $proteanContainerBuilder->getDiscoverableDirectories()->addDirectoryPathFilter('../fab/Prefab5/Doctrine');
-        $proteanContainerBuilder->getDiscoverableDirectories()->addDirectoryPathFilter('../fab/Prefab5/PDO');
-        $proteanContainerBuilder->getDiscoverableDirectories()->addDirectoryPathFilter('../fab/Prefab5/Opcache');
-        $proteanContainerBuilder->getDiscoverableDirectories()->addDirectoryPathFilter(
-            '../fab/Prefab5/SearchCriteria'
-        );
-        $proteanContainerBuilder->getDiscoverableDirectories()->addDirectoryPathFilter(
-            '../buphalo-fab/SuccessWorker'
-        );
-        $proteanContainerBuilder->getDiscoverableDirectories()->addDirectoryPathFilter('SuccessWorker');
         $rootDirectory = realpath(dirname(__DIR__, 3));
         if (false === $rootDirectory) {
             throw new RuntimeException('Absolute path of the root directory not found.');
         }
-        $proteanContainerBuilder->getFilesystemProperties()->setRootDirectoryPath($rootDirectory);
-        $proteanContainerBuilder->registerServiceAsPublic(Worker\Builder\FactoryInterface::class);
-        return $proteanContainerBuilder->build();
+
+        $cacheHandler = (new SymfonyConfigCacheHandler\Builder())
+            ->setName(str_replace('\\', '', Worker::class))
+            ->setCacheDirPath($rootDirectory . '/data/cache')
+            ->setDebug(true)
+            ->build();
+
+        return (new TinyContainerBuilder())
+            ->setContainerBuilder(new ContainerBuilder())
+            ->setRootPath($rootDirectory)
+            ->addSourcePath('vendor/neighborhoods/kojo-worker-decorator-component/fab')
+            ->addSourcePath('vendor/neighborhoods/kojo-worker-decorator-component/src')
+            ->addSourcePath('fab/Prefab5/Doctrine')
+            ->addSourcePath('fab/Prefab5/PDO')
+            ->addSourcePath('fab/Prefab5/Opcache')
+            ->addSourcePath('fab/Prefab5/SearchCriteria')
+            ->addSourcePath('src/SuccessWorker')
+            ->addSourcePath('buphalo-fab/SuccessWorker')
+            ->makePublic(Worker\Builder\FactoryInterface::class)
+            ->addCompilerPass(new \Symfony\Component\DependencyInjection\Compiler\AnalyzeServiceReferencesPass())
+            ->addCompilerPass(new \Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass())
+            ->setCacheHandler($cacheHandler)
+            ->build();
     }
 }

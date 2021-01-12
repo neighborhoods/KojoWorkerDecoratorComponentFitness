@@ -1,7 +1,7 @@
 {
     "name": "neighborhoods/kojo-worker-decorator-component-fitness",
     "description": "Fitness project for neighborhoods/kojo-worker-decorator-component",
-    "minimum-stability": "dev",
+    "minimum-stability": "alpha",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -10,19 +10,14 @@
             "email": "hrcajuka@gmail.com"
         }
     ],
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://satis.neighborhoods.com"
-        }
-    ],
     "require": {
         "php": "^7.4",
         "doctrine/dbal": "^2.10",
         "neighborhoods/buphalo": "^1.1",
+        "neighborhoods/dependency-injection-container-builder": "^1",
         "neighborhoods/kojo": "5.2.0",
+        "neighborhoods/kojo-worker-decorator-component": "0.1.0-alpha",
         "neighborhoods/prefab": "^7",
-        "neighborhoods/kojo-worker-decorator-component": "dev-feature/worker-interface",
         "robmorgan/phinx": "dev-master"
     },
     "autoload": {
