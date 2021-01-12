@@ -1,0 +1,11 @@
+services:
+  Neighborhoods\KojoWorkerDecoratorComponentFitness\DecoratorParameters\Worker\BuilderInterface:
+    class: Neighborhoods\KojoWorkerDecoratorComponentFitness\DecoratorParameters\Worker\Builder
+    public: false
+    shared: false
+    calls:
+      - [setWorkerFactory, ['@Neighborhoods\KojoWorkerDecoratorComponentFitness\DecoratorParameters\Worker\FactoryInterface']]
+      # Add predefined decorator(s) as shown below
+      - [ addDecoratorBuilderFactory, [ '@Neighborhoods\KojoWorkerDecoratorComponent\Worker\CrashedThresholdDecorator\Builder\FactoryInterface' ] ]
+      - [ addDecoratorBuilderFactory, [ '@Neighborhoods\KojoWorkerDecoratorComponent\Worker\UserlandPdoDecorator\Builder\FactoryInterface' ] ]
+      - [ addDecoratorBuilderFactory, [ '@Neighborhoods\KojoWorkerDecoratorComponent\Worker\ExceptionHandlingDecorator\Builder\FactoryInterface' ] ]

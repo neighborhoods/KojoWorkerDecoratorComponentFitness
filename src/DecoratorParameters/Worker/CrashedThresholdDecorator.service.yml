@@ -1,0 +1,3 @@
+parameters:
+  Neighborhoods\KojoWorkerDecoratorComponent\Worker\CrashedThresholdDecoratorInterface.threshold: 1
+  Neighborhoods\KojoWorkerDecoratorComponent\Worker\CrashedThresholdDecoratorInterface.delay: 1

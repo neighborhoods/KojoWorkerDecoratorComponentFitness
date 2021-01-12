@@ -1,0 +1,2 @@
+parameters:
+  Neighborhoods\KojoWorkerDecoratorComponent\Worker\ExceptionHandlingDecoratorInterface.retryIntervalDefinition: 'PT2M'
