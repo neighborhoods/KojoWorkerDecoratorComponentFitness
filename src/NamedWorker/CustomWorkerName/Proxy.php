@@ -52,7 +52,6 @@ class Proxy implements ProxyInterface
             ->addSourcePath('fab/Prefab5/Doctrine')
             ->addSourcePath('fab/Prefab5/PDO')
             ->addSourcePath('fab/Prefab5/Opcache')
-            ->addSourcePath('fab/Prefab5/SearchCriteria')
             ->addSourcePath('src/NamedWorker')
             ->addSourcePath('buphalo-fab/NamedWorker')
             ->makePublic(Worker\Builder\FactoryInterface::class)
