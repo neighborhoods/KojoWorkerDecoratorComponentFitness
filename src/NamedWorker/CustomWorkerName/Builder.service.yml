@@ -1,9 +1,4 @@
-parameters:
-  Neighborhoods\KojoWorkerDecoratorComponent\Worker\CrashedThresholdDecoratorInterface.threshold: 5
-  Neighborhoods\KojoWorkerDecoratorComponent\Worker\ExceptionHandlingDecoratorInterface.retryIntervalDefinition: 'PT5M'
 services:
-  Neighborhoods\KojoWorkerDecoratorComponent\Worker\UserlandPdoDecorator\BuilderInterface.prefabDoctrineDbalConnectionDecoratorRepository:
-    alias: Neighborhoods\KojoWorkerDecoratorComponentFitness\Prefab5\Doctrine\DBAL\Connection\Decorator\RepositoryInterface
   Neighborhoods\KojoWorkerDecoratorComponentFitness\NamedWorker\CustomWorkerName\BuilderInterface:
     class: Neighborhoods\KojoWorkerDecoratorComponentFitness\NamedWorker\CustomWorkerName\Builder
     public: false
