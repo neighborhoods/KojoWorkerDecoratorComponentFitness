@@ -14,6 +14,10 @@ class Worker implements WorkerInterface
     public function work(): \Neighborhoods\KojoWorkerDecoratorComponent\WorkerInterface
     {
         $this->getApiV1WorkerService()
+            ->getLogger()
+            ->info(static::class . ' completing successfully.');
+
+        $this->getApiV1WorkerService()
             ->requestCompleteSuccess()
             ->applyRequest();
 
