@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a8d4850fca6951e5760897b413b6af66",
+    "content-hash": "ae98a2673a4be8cb2afb45efc5519d98",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -2854,20 +2854,21 @@
         },
         {
             "name": "neighborhoods/kojo-worker-decorator-component",
-            "version": "0.1.0-alpha",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/neighborhoods/KojoWorkerDecoratorComponent.git",
-                "reference": "67d404c4a3d3fc61d8b2b553aff0bc7af0bde21f"
+                "reference": "338fcdee76d30be3383c0e9fec2ea873fee9121b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/neighborhoods/KojoWorkerDecoratorComponent/zipball/67d404c4a3d3fc61d8b2b553aff0bc7af0bde21f",
-                "reference": "67d404c4a3d3fc61d8b2b553aff0bc7af0bde21f",
+                "url": "https://api.github.com/repos/neighborhoods/KojoWorkerDecoratorComponent/zipball/338fcdee76d30be3383c0e9fec2ea873fee9121b",
+                "reference": "338fcdee76d30be3383c0e9fec2ea873fee9121b",
                 "shasum": ""
             },
             "require": {
                 "ext-pdo": "*",
+                "neighborhoods/dependency-injection-container-builder": "^1.0",
                 "neighborhoods/exception-component": "^1.0.5",
                 "neighborhoods/kojo": "^5",
                 "neighborhoods/throwable-diagnostic-component": "^3.0",
@@ -2903,7 +2904,7 @@
                 }
             ],
             "description": "A set of Kojo Worker Decorators that fulfill often repeated code.",
-            "time": "2021-01-12T07:23:38+00:00"
+            "time": "2021-01-13T08:54:28+00:00"
         },
         {
             "name": "neighborhoods/prefab",
@@ -5117,9 +5118,8 @@
     ],
     "packages-dev": [],
     "aliases": [],
-    "minimum-stability": "alpha",
+    "minimum-stability": "stable",
     "stability-flags": {
-        "neighborhoods/kojo-worker-decorator-component": 15,
         "robmorgan/phinx": 20
     },
     "prefer-stable": false,

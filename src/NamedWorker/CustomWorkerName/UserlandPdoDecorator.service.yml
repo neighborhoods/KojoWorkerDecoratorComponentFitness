@@ -1,3 +1,0 @@
-services:
-  Neighborhoods\KojoWorkerDecoratorComponent\Worker\UserlandPdoDecorator\BuilderInterface.prefabDoctrineDbalConnectionDecoratorRepository:
-    alias: Neighborhoods\KojoWorkerDecoratorComponentFitness\Prefab5\Doctrine\DBAL\Connection\Decorator\RepositoryInterface

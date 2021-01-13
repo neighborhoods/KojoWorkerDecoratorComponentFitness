@@ -37,7 +37,7 @@ The `ExceptionHandlingDecorator` is supposed to catch the exception, log it and 
 
 ### Decorator Parameters
 
-This component has a worker logging a success message and completing successfully. 
+This component has a worker logging a success message and completing successfully.  
 It has the default decorator stack, but defines Symfony DI parameter values for all decorator related parameters.  
 Pay attention to the order in which the source paths are added to the container builder in the `Proxy`.
 
