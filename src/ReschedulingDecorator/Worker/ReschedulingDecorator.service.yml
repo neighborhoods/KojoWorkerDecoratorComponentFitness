@@ -1,0 +1,3 @@
+parameters:
+  Neighborhoods\KojoWorkerDecoratorComponent\Worker\ReschedulingDecoratorInterface.jobTypeCode: !php/const Neighborhoods\KojoWorkerDecoratorComponentFitness\ReschedulingDecorator\WorkerInterface::JOB_TYPE_CODE
+  Neighborhoods\KojoWorkerDecoratorComponent\Worker\ReschedulingDecoratorInterface.rescheduleDelaySeconds: 10

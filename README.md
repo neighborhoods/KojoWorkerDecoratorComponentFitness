@@ -11,6 +11,7 @@ Examples include:
 * [Decorator Parameters](#decorator-parameters)
 * [Custom Decorator](#custom-decorator)
 * [Named Worker](#named-worker)
+* [Rescheduling Decorator](#rescheduling-decorator)
 
 All examples use Buphalo templates as much as possible.
 
@@ -56,6 +57,13 @@ The standard output will show the two logged messages.
 
 Almost identical to [Success Worker](#success-worker), only difference is the worker name. The worker is named `CustomWorkerName`, not `Worker`.  
 This example shows that Buphalo templates work with any worker name.
+
+### Rescheduling Decorator
+
+This component has a worker logging a message.  
+The Rescheduling Decorator is added to the default decorator stack. The Rescheduling Decorator completes the job and adds schedules it again. Only Symfony DI parameters without a default value are defined.
+
+After scheduling a job of this type, the job should complete successfully and be removed after a minute. Every time the job completes successfully a new job of the same time should be scheduled to start 10 seconds delayed.
 
 ## Setup
 

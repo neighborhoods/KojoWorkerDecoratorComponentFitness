@@ -1,7 +1,7 @@
 {
     "name": "neighborhoods/kojo-worker-decorator-component-fitness",
     "description": "Fitness project for neighborhoods/kojo-worker-decorator-component",
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -16,7 +16,7 @@
         "neighborhoods/buphalo": "^1.1",
         "neighborhoods/dependency-injection-container-builder": "^1",
         "neighborhoods/kojo": "5.2.0",
-        "neighborhoods/kojo-worker-decorator-component": "^1",
+        "neighborhoods/kojo-worker-decorator-component": "rescheduling-dev",
         "neighborhoods/prefab": "^7",
         "robmorgan/phinx": "dev-master"
     },

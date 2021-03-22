@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ae98a2673a4be8cb2afb45efc5519d98",
+    "content-hash": "8ca7c574825fa2d0070eeefccde0cdda",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -2602,53 +2602,6 @@
             "time": "2020-04-06T22:11:11+00:00"
         },
         {
-            "name": "neighborhoods/container-builder",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:neighborhoods/ContainerBuilder.git",
-                "reference": "3ed389e32376ea55d8e86d5f4e8644f666ad837f"
-            },
-            "dist": {
-                "type": "tar",
-                "url": "https://satis.neighborhoods.com/dist/neighborhoods/container-builder/neighborhoods-container-builder-3ed389e32376ea55d8e86d5f4e8644f666ad837f-zip-7f84e3.tar",
-                "reference": "3ed389e32376ea55d8e86d5f4e8644f666ad837f",
-                "shasum": "f4391611ec7a22f1d1b53d15927a823bdc75d864"
-            },
-            "require": {
-                "ext-json": "*",
-                "ext-zend-opcache": "*",
-                "guzzlehttp/psr7": "^1.0",
-                "php": "^7.2",
-                "symfony/config": "^4.3",
-                "symfony/dependency-injection": "^4.3",
-                "symfony/filesystem": "^4.3",
-                "symfony/finder": "^4.3",
-                "symfony/yaml": "^4.3",
-                "zendframework/zend-expressive": "^3.0.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Neighborhoods\\ContainerBuilder\\": [
-                        "src"
-                    ]
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Neighborhoods\\ContainerBuilder\\": [
-                        "src/"
-                    ]
-                }
-            },
-            "license": [
-                "proprietary"
-            ],
-            "description": "Library to build Symfony DI containers",
-            "time": "2019-08-27T15:42:25+00:00"
-        },
-        {
             "name": "neighborhoods/datadog-component",
             "version": "1.0.0",
             "source": {
@@ -2854,16 +2807,16 @@
         },
         {
             "name": "neighborhoods/kojo-worker-decorator-component",
-            "version": "1.0.0",
+            "version": "dev-rescheduling",
             "source": {
                 "type": "git",
                 "url": "https://github.com/neighborhoods/KojoWorkerDecoratorComponent.git",
-                "reference": "338fcdee76d30be3383c0e9fec2ea873fee9121b"
+                "reference": "2a2417111ff7a3e00144eadb5a5479c0140c1c5a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/neighborhoods/KojoWorkerDecoratorComponent/zipball/338fcdee76d30be3383c0e9fec2ea873fee9121b",
-                "reference": "338fcdee76d30be3383c0e9fec2ea873fee9121b",
+                "url": "https://api.github.com/repos/neighborhoods/KojoWorkerDecoratorComponent/zipball/2a2417111ff7a3e00144eadb5a5479c0140c1c5a",
+                "reference": "2a2417111ff7a3e00144eadb5a5479c0140c1c5a",
                 "shasum": ""
             },
             "require": {
@@ -2904,7 +2857,11 @@
                 }
             ],
             "description": "A set of Kojo Worker Decorators that fulfill often repeated code.",
-            "time": "2021-01-13T08:54:28+00:00"
+            "support": {
+                "issues": "https://github.com/neighborhoods/KojoWorkerDecoratorComponent/issues",
+                "source": "https://github.com/neighborhoods/KojoWorkerDecoratorComponent/tree/rescheduling"
+            },
+            "time": "2021-03-22T15:31:33+00:00"
         },
         {
             "name": "neighborhoods/prefab",
@@ -5118,8 +5075,9 @@
     ],
     "packages-dev": [],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": {
+        "neighborhoods/kojo-worker-decorator-component": 20,
         "robmorgan/phinx": 20
     },
     "prefer-stable": false,
@@ -5128,5 +5086,5 @@
         "php": "^7.4"
     },
     "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "plugin-api-version": "2.0.0"
 }
