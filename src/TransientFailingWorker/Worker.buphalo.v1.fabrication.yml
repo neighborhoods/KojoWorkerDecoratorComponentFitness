@@ -15,6 +15,10 @@ actors:
     template: KojoWorkerDecoratorComponent/Worker/PrimaryActorName/ProxyInterface.php
   <PrimaryActorName>/Proxy/AwareTrait.php:
     template: KojoWorkerDecoratorComponent/Worker/PrimaryActorName/Proxy/AwareTrait.php
+  <PrimaryActorName>/Container.php:
+    template: KojoWorkerDecoratorComponent/Worker/PrimaryActorName/Container.php
+  <PrimaryActorName>/ContainerInterface.php:
+    template: KojoWorkerDecoratorComponent/Worker/PrimaryActorName/ContainerInterface.php
   <PrimaryActorName>/Factory.php:
     template: KojoWorkerDecoratorComponent/Worker/PrimaryActorName/Factory.php
   <PrimaryActorName>/Factory.service.yml:
