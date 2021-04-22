@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Neighborhoods\KojoWorkerDecoratorComponentFitness\NamedWorker;
 
 use Neighborhoods\Kojo\Api\V1;
-use Neighborhoods\KojoWorkerDecoratorComponent\WorkerInterface;
+use Neighborhoods\KojoWorkerDecoratorComponent\WorkerV1\WorkerInterface;
 
 class CustomWorkerName implements CustomWorkerNameInterface
 {

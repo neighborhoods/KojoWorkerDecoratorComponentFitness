@@ -4,9 +4,10 @@ services:
     public: false
     shared: false
     calls:
-      - [setWorkerFactory, ['@Neighborhoods\KojoWorkerDecoratorComponentFitness\CustomDecorator\Worker\FactoryInterface']]
+      - [setWorkerV1WorkerFactory, ['@Neighborhoods\KojoWorkerDecoratorComponentFitness\CustomDecorator\Worker\FactoryInterface']]
       # Add predefined decorator(s) as shown below
       - [ addDecoratorBuilderFactory, [ '@Neighborhoods\KojoWorkerDecoratorComponentFitness\CustomDecorator\Worker\CustomDecorator\Builder\FactoryInterface' ] ]
-      - [ addDecoratorBuilderFactory, [ '@Neighborhoods\KojoWorkerDecoratorComponent\Worker\CrashedThresholdDecorator\Builder\FactoryInterface' ] ]
-      - [ addDecoratorBuilderFactory, [ '@Neighborhoods\KojoWorkerDecoratorComponent\Worker\UserlandPdoDecorator\Builder\FactoryInterface' ] ]
-      - [ addDecoratorBuilderFactory, [ '@Neighborhoods\KojoWorkerDecoratorComponent\Worker\ExceptionHandlingDecorator\Builder\FactoryInterface' ] ]
+      - [ addDecoratorBuilderFactory, [ '@Neighborhoods\KojoWorkerDecoratorComponent\WorkerV1Decorators\RetryThresholdV1\RetryThresholdDecorator\Builder\FactoryInterface' ] ]
+      - [ addDecoratorBuilderFactory, [ '@Neighborhoods\KojoWorkerDecoratorComponent\WorkerV1Decorators\CrashedThresholdV1\CrashedThresholdDecorator\Builder\FactoryInterface' ] ]
+      - [ addDecoratorBuilderFactory, [ '@Neighborhoods\KojoWorkerDecoratorComponent\WorkerV1Decorators\UserlandPdoV1\UserlandPdoDecorator\Builder\FactoryInterface' ] ]
+      - [ addDecoratorBuilderFactory, [ '@Neighborhoods\KojoWorkerDecoratorComponent\WorkerV1Decorators\ExceptionHandlingV1\ExceptionHandlingDecorator\Builder\FactoryInterface' ] ]

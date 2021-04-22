@@ -16,7 +16,7 @@
         "neighborhoods/buphalo": "^1.1",
         "neighborhoods/dependency-injection-container-builder": "^1",
         "neighborhoods/kojo": "5.2.0",
-        "neighborhoods/kojo-worker-decorator-component": "^2.0@alpha",
+        "neighborhoods/kojo-worker-decorator-component": "dev-SERCOMP-3",
         "neighborhoods/prefab": "^7",
         "robmorgan/phinx": "dev-master"
     },
