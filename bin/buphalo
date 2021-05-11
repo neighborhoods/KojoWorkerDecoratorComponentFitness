@@ -7,7 +7,7 @@ cd ..
 Neighborhoods_Buphalo_V1_TargetApplication_BuilderInterface__SourceDirectoryPath=$PWD/src \
 Neighborhoods_Buphalo_V1_TargetApplication_BuilderInterface__FabricationDirectoryPath=$PWD/buphalo-fab \
 Neighborhoods_Buphalo_V1_TargetApplication_BuilderInterface__NamespacePrefix=Neighborhoods\\KojoWorkerDecoratorComponentFitness\\ \
-Neighborhoods_Buphalo_V1_TemplateTree_Map_Builder_FactoryInterface__TemplateTreeDirectoryPaths=default:$PWD/vendor/neighborhoods/buphalo/template-tree/V1,diagnostic:$PWD/vendor/neighborhoods/throwable-diagnostic-component/template-tree/V1,kwdc:$PWD/vendor/neighborhoods/kojo-worker-decorator-component/template-tree/V1 \
+Neighborhoods_Buphalo_V1_TemplateTree_Map_Builder_FactoryInterface__TemplateTreeDirectoryPaths=default:$PWD/vendor/neighborhoods/buphalo/template-tree/V1,diagnostic:$PWD/vendor/neighborhoods/throwable-diagnostic-component/template-tree/BuphaloV1,kwdc:$PWD/vendor/neighborhoods/kojo-worker-decorator-component/template-tree/V1 \
 Neighborhoods_Buphalo_V1_FabricationFile_Map_BuilderInterface__FinderFileNames="*.buphalo.v1.fabrication.yml" \
 vendor/bin/buphalo
 

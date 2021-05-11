@@ -32,6 +32,7 @@ final class Container implements ContainerInterface
         return (new TinyContainerBuilder())
             ->setContainerBuilder(new ContainerBuilder())
             ->setRootPath($rootDirectory)
+            ->addSourcePath('vendor/neighborhoods/throwable-diagnostic-component/fab')
             ->addSourcePath('vendor/neighborhoods/throwable-diagnostic-component/src')
             ->addSourcePath('vendor/neighborhoods/kojo-worker-decorator-component/fab')
             ->addSourcePath('vendor/neighborhoods/kojo-worker-decorator-component/src')
