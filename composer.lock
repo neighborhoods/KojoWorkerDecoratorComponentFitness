@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "87efa0ccd5e03305432c2c6b39b88ad8",
+    "content-hash": "425f4b326cbcf3f52ff945c36cdb188a",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -2743,16 +2743,16 @@
         },
         {
             "name": "neighborhoods/kojo",
-            "version": "5.2.0",
+            "version": "5.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/neighborhoods/kojo.git",
-                "reference": "b6d8dd2959bcb938a6074e52f579d3bd0425013a"
+                "reference": "9ba10bf93a5184ffba1e54fa5a35f9bf19fe014c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/neighborhoods/kojo/zipball/b6d8dd2959bcb938a6074e52f579d3bd0425013a",
-                "reference": "b6d8dd2959bcb938a6074e52f579d3bd0425013a",
+                "url": "https://api.github.com/repos/neighborhoods/kojo/zipball/9ba10bf93a5184ffba1e54fa5a35f9bf19fe014c",
+                "reference": "9ba10bf93a5184ffba1e54fa5a35f9bf19fe014c",
                 "shasum": ""
             },
             "require": {
@@ -2760,7 +2760,7 @@
                 "dragonmantank/cron-expression": "^2.0",
                 "ext-pcntl": "*",
                 "monolog/monolog": "^1.24.0",
-                "php": "^7.2",
+                "php": "^7.2|^8.0",
                 "symfony/cache": "4.4.*",
                 "symfony/config": "4.4.*",
                 "symfony/console": "4.4.*",
@@ -2806,7 +2806,7 @@
                 }
             ],
             "description": "Neighborhoods Kōjō is a distributed task manager.",
-            "time": "2020-09-02T15:20:03+00:00"
+            "time": "2021-06-17T19:30:55+00:00"
         },
         {
             "name": "neighborhoods/kojo-worker-decorator-component",
@@ -2864,16 +2864,16 @@
         },
         {
             "name": "neighborhoods/prefab",
-            "version": "7.0.3",
+            "version": "8.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/neighborhoods/Prefab.git",
-                "reference": "7c3ab63140ba4cf1636dba066650bb4d6155c7f1"
+                "reference": "8abcda77ea583d995302eceaa4c6fcbb1d772f65"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/neighborhoods/Prefab/zipball/7c3ab63140ba4cf1636dba066650bb4d6155c7f1",
-                "reference": "7c3ab63140ba4cf1636dba066650bb4d6155c7f1",
+                "url": "https://api.github.com/repos/neighborhoods/Prefab/zipball/8abcda77ea583d995302eceaa4c6fcbb1d772f65",
+                "reference": "8abcda77ea583d995302eceaa4c6fcbb1d772f65",
                 "shasum": ""
             },
             "require": {
@@ -2891,7 +2891,8 @@
                 "mezzio/mezzio-problem-details": "^1.0",
                 "neighborhoods/buphalo": "^1.0",
                 "neighborhoods/datadog-component": "^1.0",
-                "php": "^7.3",
+                "neighborhoods/dependency-injection-container-builder": "^1.0",
+                "php": "^7.3|^8.0",
                 "symfony/config": "^4.4",
                 "symfony/console": "^4.4",
                 "symfony/dependency-injection": "^4.4",
@@ -2931,7 +2932,7 @@
                 }
             ],
             "description": "Neighborhoods Prefab builds Protean machinery.",
-            "time": "2021-06-10T15:01:32+00:00"
+            "time": "2021-06-17T20:16:32+00:00"
         },
         {
             "name": "neighborhoods/throwable-diagnostic-component",
