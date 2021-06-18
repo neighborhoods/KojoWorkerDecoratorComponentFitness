@@ -49,6 +49,7 @@ final class Container implements ContainerInterface
             ->addCompilerPass(new \Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass())
             ->setCacheHandler($cacheHandler);
 
+        $containerBuilder->addSourcePath('vendor/neighborhoods/throwable-diagnostic-component/fab');
         $containerBuilder->addSourcePath('vendor/neighborhoods/throwable-diagnostic-component/src');
         foreach (self::KOJO_WORKER_DECORATORS as $decorator) {
             $containerBuilder
