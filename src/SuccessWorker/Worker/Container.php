@@ -15,10 +15,10 @@ use Psr\Container\ContainerInterface as PsrContainerInterface;
 final class Container implements ContainerInterface
 {
     private const KOJO_WORKER_DECORATORS = [
-        'WorkerV1Decorators/CrashedThresholdV1',
-        'WorkerV1Decorators/ExceptionHandlingV1',
-        'WorkerV1Decorators/RetryThresholdV1',
-        'WorkerV1Decorators/UserlandPdoV1',
+        'WorkerDecorationV1Decorators/CrashedThresholdV1',
+        'WorkerDecorationV1Decorators/ExceptionHandlingV1',
+        'WorkerDecorationV1Decorators/RetryThresholdV1',
+        'WorkerDecorationV1Decorators/UserlandPdoV1',
     ];
     private $wrappedContainer;
 

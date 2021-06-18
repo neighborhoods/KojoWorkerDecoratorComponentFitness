@@ -17,7 +17,7 @@
         "neighborhoods/dependency-injection-container-builder": "^1",
         "neighborhoods/kojo": "5.2.0",
         "neighborhoods/kojo-worker-decorator-component": "dev-SERCOMP-3",
-        "neighborhoods/prefab": "^7",
+        "neighborhoods/prefab": "^7.0.3",
         "robmorgan/phinx": "dev-master"
     },
     "autoload": {
