@@ -7,25 +7,20 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 use Neighborhoods\KojoWorkerDecoratorComponentFitness\CustomDecorator;
 use Neighborhoods\KojoWorkerDecoratorComponentFitness\Prefab5\Doctrine\DBAL\Connection\DecoratorInterface;
-use Neighborhoods\KojoWorkerDecoratorComponentFitness\Prefab5\Protean\Container\Builder;
 
-// Instantiate a new Protean (Neighborhoods) Container Builder.
-$proteanContainerBuilder = (new Builder());
-// Sets the name of the built container. This will be the name of the file if cached.
-$proteanContainerBuilder->setContainerName('DoctrineConnectionBuilder');
-// This is to turn off some unnecessary HTTP logic.
-$proteanContainerBuilder->setCanBuildZendExpressive(false);
-$proteanContainerBuilder->getDiscoverableDirectories()->addDirectoryPathFilter('Prefab5/Doctrine');
-$proteanContainerBuilder->getDiscoverableDirectories()->addDirectoryPathFilter('Prefab5/PDO');
-$proteanContainerBuilder->getDiscoverableDirectories()->addDirectoryPathFilter('Prefab5/Opcache');
-$proteanContainerBuilder->getFilesystemProperties()->setRootDirectoryPath(realpath(dirname(__DIR__)));
-// All Actors are non-public in the container by default, we turn one and ony one on to use.
-$proteanContainerBuilder->registerServiceAsPublic(DecoratorInterface::class);
-// Build the container.
-$proteanContainer = $proteanContainerBuilder->build();
+$container = (new \Neighborhoods\DependencyInjectionContainerBuilderComponent\TinyContainerBuilder())
+    ->setContainerBuilder(new \Symfony\Component\DependencyInjection\ContainerBuilder())
+    ->setRootPath(realpath(dirname(__DIR__)))
+    ->addSourcePath('fab/Prefab5/Doctrine')
+    ->addSourcePath('fab/Prefab5/PDO')
+    ->addSourcePath('fab/Prefab5/Opcache')
+    ->makePublic(DecoratorInterface::class)
+    ->addCompilerPass(new \Symfony\Component\DependencyInjection\Compiler\AnalyzeServiceReferencesPass())
+    ->addCompilerPass(new \Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass())
+    ->build();
 
 // Retrieve the only public service (that we enabled above).
-$connection = $proteanContainer->get(DecoratorInterface::class)->getDoctrineConnection();
+$connection = $container->get(DecoratorInterface::class)->getDoctrineConnection();
 
 $now = (new DateTime())->format('Y-m-d H:i:s');
 $connection->insert(
