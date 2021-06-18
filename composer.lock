@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "74e4f8a4f392c997978d17b9414966ef",
+    "content-hash": "9747176a38cfb4e7fcb98af29f0eea07",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -2807,16 +2807,16 @@
         },
         {
             "name": "neighborhoods/kojo-worker-decorator-component",
-            "version": "2.0.0-alpha",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/neighborhoods/KojoWorkerDecoratorComponent.git",
-                "reference": "96976dbbd48267db3b8e1fe38c0fb8f84347eb74"
+                "reference": "1d5d4eb4ec980ae5574c6dcb941c64ac0c4c4696"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/neighborhoods/KojoWorkerDecoratorComponent/zipball/96976dbbd48267db3b8e1fe38c0fb8f84347eb74",
-                "reference": "96976dbbd48267db3b8e1fe38c0fb8f84347eb74",
+                "url": "https://api.github.com/repos/neighborhoods/KojoWorkerDecoratorComponent/zipball/1d5d4eb4ec980ae5574c6dcb941c64ac0c4c4696",
+                "reference": "1d5d4eb4ec980ae5574c6dcb941c64ac0c4c4696",
                 "shasum": ""
             },
             "require": {
@@ -2824,7 +2824,7 @@
                 "neighborhoods/dependency-injection-container-builder": "^1.0",
                 "neighborhoods/exception-component": "^1.0.5",
                 "neighborhoods/kojo": "^5",
-                "neighborhoods/throwable-diagnostic-component": "^3.0",
+                "neighborhoods/throwable-diagnostic-component": "^4",
                 "php": "^7.3"
             },
             "require-dev": {
@@ -2859,9 +2859,9 @@
             "description": "A set of Kojo Worker Decorators that fulfill often repeated code.",
             "support": {
                 "issues": "https://github.com/neighborhoods/KojoWorkerDecoratorComponent/issues",
-                "source": "https://github.com/neighborhoods/KojoWorkerDecoratorComponent/tree/2.0.0-alpha"
+                "source": "https://github.com/neighborhoods/KojoWorkerDecoratorComponent/tree/3.0.0"
             },
-            "time": "2021-04-06T18:05:21+00:00"
+            "time": "2021-05-10T21:16:56+00:00"
         },
         {
             "name": "neighborhoods/prefab",
@@ -2936,16 +2936,16 @@
         },
         {
             "name": "neighborhoods/throwable-diagnostic-component",
-            "version": "3.0.1",
+            "version": "4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/neighborhoods/ThrowableDiagnosticComponent.git",
-                "reference": "61f77772a6df292f8ae6e75714bc661147ce333b"
+                "reference": "cc92d9c56806fe294aa8f89f6f802a621eb153aa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/neighborhoods/ThrowableDiagnosticComponent/zipball/61f77772a6df292f8ae6e75714bc661147ce333b",
-                "reference": "61f77772a6df292f8ae6e75714bc661147ce333b",
+                "url": "https://api.github.com/repos/neighborhoods/ThrowableDiagnosticComponent/zipball/cc92d9c56806fe294aa8f89f6f802a621eb153aa",
+                "reference": "cc92d9c56806fe294aa8f89f6f802a621eb153aa",
                 "shasum": ""
             },
             "require": {
@@ -2960,6 +2960,7 @@
                 "symfony/http-client-contracts": "^2.2"
             },
             "require-dev": {
+                "neighborhoods/dependency-injection-container-builder": "^1.1",
                 "phpstan/extension-installer": "^1.0",
                 "phpstan/phpstan": "^0.12.54",
                 "phpstan/phpstan-phpunit": "^0.12.16",
@@ -2995,7 +2996,11 @@
                 }
             ],
             "description": "A Service Agnostic Component for diagnosing Throwables.",
-            "time": "2020-11-25T17:21:23+00:00"
+            "support": {
+                "issues": "https://github.com/neighborhoods/ThrowableDiagnosticComponent/issues",
+                "source": "https://github.com/neighborhoods/ThrowableDiagnosticComponent/tree/4.0.0"
+            },
+            "time": "2021-05-10T21:04:02+00:00"
         },
         {
             "name": "nikic/fast-route",
@@ -5077,7 +5082,6 @@
     "aliases": [],
     "minimum-stability": "alpha",
     "stability-flags": {
-        "neighborhoods/kojo-worker-decorator-component": 15,
         "robmorgan/phinx": 20
     },
     "prefer-stable": false,
