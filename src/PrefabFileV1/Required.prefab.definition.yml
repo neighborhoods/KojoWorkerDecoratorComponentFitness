@@ -1,0 +1,9 @@
+table_name: unused
+identity_field: id
+supporting_actor_group: minimal
+properties:
+  id:
+    data_type: int
+    record_key: id
+    nullable: false
+    created_on_insert: true
