@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Neighborhoods\KojoWorkerDecoratorComponentFitness\CustomDecorator\Worker;
 
-use Neighborhoods\KojoWorkerDecoratorComponent\Worker\DecoratorTrait;
-use Neighborhoods\KojoWorkerDecoratorComponent\WorkerInterface;
+use Neighborhoods\KojoWorkerDecoratorComponent\WorkerDecorationV1\Worker\DecoratorTrait;
+use Neighborhoods\KojoWorkerDecoratorComponent\WorkerDecorationV1\WorkerInterface;
 
 final class CustomDecorator implements CustomDecoratorInterface
 {

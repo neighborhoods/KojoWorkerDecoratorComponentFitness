@@ -14,6 +14,12 @@ use Psr\Container\ContainerInterface as PsrContainerInterface;
 
 final class Container implements ContainerInterface
 {
+    private const KOJO_WORKER_DECORATORS = [
+        'WorkerDecorationV1Decorators/CrashedThresholdV1',
+        'WorkerDecorationV1Decorators/ExceptionHandlingV1',
+        'WorkerDecorationV1Decorators/RetryThresholdV1',
+        'WorkerDecorationV1Decorators/UserlandPdoV1',
+    ];
     private $wrappedContainer;
 
     private function buildWrappedContainer(): PsrContainerInterface
@@ -29,23 +35,26 @@ final class Container implements ContainerInterface
             ->setDebug(false)
             ->build();
 
-        return (new TinyContainerBuilder())
+        $containerBuilder = (new TinyContainerBuilder())
             ->setContainerBuilder(new ContainerBuilder())
             ->setRootPath($rootDirectory)
-            ->addSourcePath('vendor/neighborhoods/throwable-diagnostic-component/fab')
-            ->addSourcePath('vendor/neighborhoods/throwable-diagnostic-component/src')
-            ->addSourcePath('vendor/neighborhoods/kojo-worker-decorator-component/fab')
-            ->addSourcePath('vendor/neighborhoods/kojo-worker-decorator-component/src')
             ->addSourcePath('fab/Prefab5/Doctrine')
             ->addSourcePath('fab/Prefab5/PDO')
             ->addSourcePath('fab/Prefab5/Opcache')
-            ->addSourcePath('src/CustomDecorator')
             ->addSourcePath('buphalo-fab/CustomDecorator')
+            ->addSourcePath('src/CustomDecorator')
             ->makePublic(Builder\FactoryInterface::class)
             ->addCompilerPass(new \Symfony\Component\DependencyInjection\Compiler\AnalyzeServiceReferencesPass())
             ->addCompilerPass(new \Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass())
-            ->setCacheHandler($cacheHandler)
-            ->build();
+            ->setCacheHandler($cacheHandler);
+
+        foreach (self::KOJO_WORKER_DECORATORS as $decorator) {
+            $containerBuilder
+                ->addSourcePath('vendor/neighborhoods/kojo-worker-decorator-component/fab/' . $decorator)
+                ->addSourcePath('vendor/neighborhoods/kojo-worker-decorator-component/src/' . $decorator);
+        }
+
+        return $containerBuilder->build();
     }
 
     private function getWrappedContainer(): PsrContainerInterface
