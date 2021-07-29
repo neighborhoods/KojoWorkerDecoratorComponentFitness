@@ -1,4 +1,4 @@
-FROM neighborhoods/php-fpm:php-7.4-datadog
+FROM neighborhoods/php-fpm:php-8.0-datadog
 
 # Install unzip, procps, cmake, bc, and vim.
 RUN apt-get update -y \

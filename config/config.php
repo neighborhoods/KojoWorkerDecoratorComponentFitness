@@ -13,6 +13,14 @@ $cacheConfig = [
 ];
 
 $aggregator = new ConfigAggregator([
+    \Mezzio\ConfigProvider::class,
+    \Mezzio\Router\FastRouteRouter\ConfigProvider::class,
+    \Mezzio\Helper\ConfigProvider::class,
+    \Mezzio\ProblemDetails\ConfigProvider::class,
+    \Mezzio\Router\ConfigProvider::class,
+    \Laminas\Validator\ConfigProvider::class,
+    \Laminas\HttpHandlerRunner\ConfigProvider::class,
+    \Laminas\Diactoros\ConfigProvider::class,
     \Zend\ProblemDetails\ConfigProvider::class,
     \Zend\Expressive\Router\FastRouteRouter\ConfigProvider::class,
     \Zend\HttpHandlerRunner\ConfigProvider::class,
