@@ -11,12 +11,12 @@
         }
     ],
     "require": {
-        "php": "^7.4",
+        "php": "^8",
         "doctrine/dbal": "^2.10",
         "neighborhoods/buphalo": "^1.1",
         "neighborhoods/dependency-injection-container-builder": "^1",
         "neighborhoods/kojo": "^5.4",
-        "neighborhoods/kojo-worker-decorator-component": "4.0.0-alpha",
+        "neighborhoods/kojo-worker-decorator-component": "^4",
         "neighborhoods/prefab": "^8",
         "robmorgan/phinx": "dev-master"
     },
